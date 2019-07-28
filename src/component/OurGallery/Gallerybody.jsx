@@ -30,7 +30,7 @@ class Gallerybody extends Component {
           return (
             <div key={index} className="col-md-12">
               <div className="featured-item">
-                <a href="#">
+                <a href="https://www.google.com">
                   <img src={content.src} alt={content.alt} />
                 </a>
                 <div className="down-content">

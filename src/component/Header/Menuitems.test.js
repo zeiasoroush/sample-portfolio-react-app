@@ -2,7 +2,6 @@ import React from 'react';
 import { shallow, mount, render } from 'enzyme';
 import Menuitems from './Menuitems';
 
-const clickhandlecallbackchild = jest.fn();
 describe('<menuitem />', () => {
   it('it render Header', () => {
     const childcomponent = shallow(
@@ -10,20 +9,34 @@ describe('<menuitem />', () => {
     );
     expect(childcomponent).toMatchSnapshot();
   });
-  it('set active tab in header', () => {
+  it('specify active tab in header onclick event ', () => {
+    let mockfn = jest.fn();
+    Menuitems.prototype.handleClick = mockfn;
     const wrapper = shallow(
       <Menuitems
         listcontent={[{ id: 1, link: '/', name: 'HOMEPAGE' }]}
-        onclick={clickhandlecallbackchild}
+        onclick={mockfn}
       />
     );
     const spy = jest.spyOn(wrapper.instance(), 'handleClick');
-    const parent = jest.mock('./Header', () => () => 'Header');
     wrapper
       .find('Link')
       .simulate('click', { currentTarget: { href: 'http://localhost:3000/' } });
-    expect(parent.prototype.handleClick).to.equal(1);
+    expect(mockfn).toHaveBeenCalledTimes(1);
     expect(spy).toHaveBeenCalled();
+    expect(wrapper.state()).toEqual({
+      isactiveId: 1,
+      location: 'http://localhost:3000/'
+    });
+
     spy.mockClear();
   });
+  /*  it('set actrive tab classname to active', () => {
+    const component = shallow(
+      <Menuitems listcontent={[{ id: 1, link: '/', name: 'HOMEPAGE' }]} />
+    );
+    const spy = jest.spyOn(component.instance(), 'isActive');
+    component.find('Link').simulate('isActive');
+    expect(spy).toEqual('ui-tabs-active');
+  }); */
 });

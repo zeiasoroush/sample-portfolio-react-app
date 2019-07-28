@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 
 import FullBg from './Fullbg';
 import Thumbnail from './Thumbnail';
-import thumb1 from '../../assets/images/thumb-01.jpg';
-import thumb2 from '../../assets/images/thumb-02.jpg';
-import thumb3 from '../../assets/images/thumb-03.jpg';
 import './Homepage.css';
 
 class Homepage extends Component {

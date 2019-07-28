@@ -5,8 +5,8 @@ class Menuitems extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isactiveId: 0,
-      location: ''
+      isactiveId: 1,
+      location: 'http://localhost:3000/'
     };
     this.isActive = this.isActive.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -20,7 +20,6 @@ class Menuitems extends Component {
   }
   handleClick(e, id) {
     const event = e.currentTarget.href;
-    console.log('e', e.currentTarget);
     this.setState({ isactiveId: id, location: event }, () => {
       this.props.handlecallbackchild(this.state.location);
     });
