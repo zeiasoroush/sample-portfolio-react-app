@@ -70,7 +70,7 @@ describe('<menuitem />', () => {
       });
       expect(spy).toHaveBeenCalled();
       wrapper.update().state();
-      console.log(item);
+      console.log(wrapper.state());
       expect(wrapper.state().isactiveId);
     }
   });
