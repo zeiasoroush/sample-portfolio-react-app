@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<menuitem /> it render Header 1`] = `ShallowWrapper {}`;
+
+exports[`<menuitem /> specify active tab in header onclick event  1`] = `ShallowWrapper {}`;

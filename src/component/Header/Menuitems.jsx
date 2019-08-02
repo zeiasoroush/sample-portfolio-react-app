@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 
 class Menuitems extends Component {
   constructor(props) {
@@ -19,7 +19,8 @@ class Menuitems extends Component {
     }
   }
   handleClick(e, id) {
-    const event = e.currentTarget.href;
+    console.log(e);
+    const event = e.currentTargethref;
     this.setState({ isactiveId: id, location: event }, () => {
       this.props.handlecallbackchild(this.state.location);
     });
@@ -30,17 +31,19 @@ class Menuitems extends Component {
         {this.props.listcontent.map((content, index) => {
           return (
             <li key={index}>
-              <Link
-                className={this.isActive(content.id, index)}
-                onClick={e => this.handleClick(e, content.id)}
-                to={content.link}
-              >
-                <img
-                  src={require(`../../assets/images/icon-${content.id}.png`)}
-                  alt={content.name}
-                />
-                <em>{content.name}</em>
-              </Link>
+              <Router>
+                <Link
+                  className={this.isActive(content.id, index)}
+                  onClick={e => this.handleClick(e, content.id)}
+                  to={content.link}
+                >
+                  <img
+                    src={require(`../../assets/images/icon-${content.id}.png`)}
+                    alt={content.name}
+                  />
+                  <em>{content.name}</em>
+                </Link>
+              </Router>
             </li>
           );
         })}

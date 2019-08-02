@@ -3,6 +3,7 @@ import { shallow, mount, render } from 'enzyme';
 import Menuitems from './Menuitems';
 
 describe('<menuitem />', () => {
+  let mockfn = jest.fn();
   it('it render Header', () => {
     const childcomponent = shallow(
       <Menuitems listcontent={[{ id: 1, link: '/', name: 'HOMEPAGE' }]} />
@@ -10,33 +11,67 @@ describe('<menuitem />', () => {
     expect(childcomponent).toMatchSnapshot();
   });
   it('specify active tab in header onclick event ', () => {
-    let mockfn = jest.fn();
     Menuitems.prototype.handleClick = mockfn;
     const wrapper = shallow(
       <Menuitems
-        listcontent={[{ id: 1, link: '/', name: 'HOMEPAGE' }]}
+        listcontent={[{ id: 2, link: '/AboutUs', name: 'ABOUT US' }]}
         onclick={mockfn}
       />
     );
-    const spy = jest.spyOn(wrapper.instance(), 'handleClick');
-    wrapper
-      .find('Link')
-      .simulate('click', { currentTarget: { href: 'http://localhost:3000/' } });
-    expect(mockfn).toHaveBeenCalledTimes(1);
-    expect(spy).toHaveBeenCalled();
-    expect(wrapper.state()).toEqual({
-      isactiveId: 1,
-      location: 'http://localhost:3000/'
-    });
-
-    spy.mockClear();
+    expect(wrapper).toMatchSnapshot();
   });
-  /*  it('set actrive tab classname to active', () => {
-    const component = shallow(
-      <Menuitems listcontent={[{ id: 1, link: '/', name: 'HOMEPAGE' }]} />
+  it('"handleClick" to have been called ', () => {
+    const props = {
+      listItem: [
+        {
+          id: 1,
+          link: '/',
+          name: 'HOMEPAGE'
+        },
+        {
+          id: 2,
+          link: '/AboutUs',
+          name: 'ABOUT US'
+        },
+        {
+          id: 3,
+          link: '/Gallery',
+          name: 'OUR GALLERY'
+        },
+        {
+          id: 4,
+          link: '/ContactUs',
+          name: 'CONTACT US'
+        }
+      ]
+    };
+    const handleClick = jest.fn();
+    let wrapper = shallow(
+      <Menuitems listcontent={props.listItem} onClick={handleClick} />
     );
-    const spy = jest.spyOn(component.instance(), 'isActive');
-    component.find('Link').simulate('isActive');
-    expect(spy).toEqual('ui-tabs-active');
-  }); */
+    expect(wrapper).toHaveLength(1);
+    expect(handleClick).not.toHaveBeenCalled();
+
+    const spy = jest.spyOn(Menuitems.prototype, 'handleClick');
+    for (let index = 0; index < 4; index++) {
+      const item = props.listItem[index];
+      wrapper
+        .find('Link')
+        .at(index)
+        .simulate('Click', {
+          target: {
+            isactiveId: item.id,
+            location: item.link
+          }
+        });
+      wrapper.setState({
+        isactiveId: item.id,
+        location: item.link
+      });
+      expect(spy).toHaveBeenCalled();
+      wrapper.update().state();
+      console.log(item);
+      expect(wrapper.state().isactiveId);
+    }
+  });
 });
