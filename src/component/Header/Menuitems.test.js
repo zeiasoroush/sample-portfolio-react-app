@@ -70,8 +70,48 @@ describe('<menuitem />', () => {
       });
       expect(spy).toHaveBeenCalled();
       wrapper.update().state();
-      console.log(wrapper.state());
       expect(wrapper.state().isactiveId);
+    }
+  });
+  it('should call isactive func for set active tab', () => {
+    const props = {
+      listItem: [
+        {
+          id: 1,
+          link: '/',
+          name: 'HOMEPAGE'
+        },
+        {
+          id: 2,
+          link: '/AboutUs',
+          name: 'ABOUT US'
+        },
+        {
+          id: 3,
+          link: '/Gallery',
+          name: 'OUR GALLERY'
+        },
+        {
+          id: 4,
+          link: '/ContactUs',
+          name: 'CONTACT US'
+        }
+      ]
+    };
+    const isActive = jest.fn();
+    let wrapper = mount(
+      <Menuitems listcontent={props.listItem} className={isActive} />
+    );
+    for (let index = 0; index < 4; index++) {
+      const s = wrapper
+        .find('Link')
+        .at(index)
+        .hasClass('ui-tabs-active');
+      if (s) {
+        expect(s).toEqual(true);
+      } else {
+        expect(s).toEqual(false);
+      }
     }
   });
 });

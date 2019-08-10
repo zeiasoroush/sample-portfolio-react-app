@@ -19,8 +19,7 @@ class Menuitems extends Component {
     }
   }
   handleClick(e, id) {
-    console.log(e);
-    const event = e.currentTargethref;
+    const event = e.currentTarget.href;
     this.setState({ isactiveId: id, location: event }, () => {
       this.props.handlecallbackchild(this.state.location);
     });

@@ -10,20 +10,20 @@ class Homepage extends Component {
     this.state = {
       contentItem1: [
         {
-          num: '1',
+          num: 1,
           active: true,
           title: 'New Arrival',
           first: 'Beautiful',
           second: 'Earth'
         },
         {
-          num: '2',
+          num: 2,
           title: 'Latest One',
           first: 'Tech',
           second: 'Meeting'
         },
         {
-          num: '3',
+          num: 3,
           title: 'Your Update',
           first: 'Smart',
           second: 'Devices'
@@ -31,23 +31,24 @@ class Homepage extends Component {
       ],
       contentItem2: [
         {
-          num: '1',
+          num: 1,
           src: '01',
           alt: 'Earth'
         },
         {
-          num: '2',
+          num: 2,
           src: '02',
           alt: 'Meeting'
         },
         {
-          num: '3',
+          num: 3,
           src: '03',
           alt: 'Smart'
         }
       ],
-      isactiveID: '0'
+      isactiveID: 0
     };
+    this.idfromThumbnail = this.idfromThumbnail.bind(this);
   }
   idfromThumbnail = activeimgId => {
     this.setState({ isactiveID: activeimgId });

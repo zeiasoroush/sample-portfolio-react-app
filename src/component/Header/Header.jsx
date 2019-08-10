@@ -10,30 +10,31 @@ class Header extends Component {
         {
           id: 1,
           link: '/',
-          name: 'HOMEPAGE',
+          name: 'HOMEPAGE'
         },
         {
           id: 2,
           link: '/AboutUs',
-          name: 'ABOUT US',
+          name: 'ABOUT US'
         },
         {
           id: 3,
           link: '/Gallery',
-          name: 'OUR GALLERY',
+          name: 'OUR GALLERY'
         },
         {
           id: 4,
           link: '/ContactUs',
-          name: 'CONTACT US',
+          name: 'CONTACT US'
         }
-      ],
-      location: ''
+      ]
     };
     this.handlecallbackchild = this.handlecallbackchild.bind(this);
   }
   handlecallbackchild(location) {
+    console.log(location);
     this.props.callbackhandle(location);
+    console.log(location);
   }
 
   render() {
