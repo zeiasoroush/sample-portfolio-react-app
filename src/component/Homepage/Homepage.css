@@ -78,7 +78,7 @@
   text-align: right;
   right: 30px;
   position: absolute;
-  top: 50%;
+  top: 20%;
   transform: translateY(-50%);
 }
 .slide-caption h6 {

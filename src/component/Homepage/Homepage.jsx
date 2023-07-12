@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import FullBg from './Fullbg';
 import Thumbnail from './Thumbnail';
-import './Homepage.css';
+import './HomePage.css';
 
 class Homepage extends Component {
   constructor(props) {
@@ -12,19 +12,22 @@ class Homepage extends Component {
         {
           num: 1,
           active: true,
-          title: 'New Arrival',
-          first: 'Beautiful',
-          second: 'Earth'
+          color: '#000',
+          title: 'PASSION',
+          first: 'IT\'s All about you',
+          second: 'Keep going'
         },
         {
           num: 2,
-          title: 'Latest One',
-          first: 'Tech',
-          second: 'Meeting'
+          title: 'Latest ',
+          color: '#000',
+          first: 'Latest Design',
+          second: 'Meaning'
         },
         {
           num: 3,
           title: 'Your Update',
+          color: '#fff',
           first: 'Smart',
           second: 'Devices'
         }
@@ -33,7 +36,7 @@ class Homepage extends Component {
         {
           num: 1,
           src: '01',
-          alt: 'Earth'
+          alt: 'Mine'
         },
         {
           num: 2,
@@ -46,7 +49,7 @@ class Homepage extends Component {
           alt: 'Smart'
         }
       ],
-      isactiveID: 0
+      isactiveID: 1
     };
     this.idfromThumbnail = this.idfromThumbnail.bind(this);
   }

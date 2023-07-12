@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 
 class Menuitems extends Component {
   constructor(props) {
@@ -30,7 +30,7 @@ class Menuitems extends Component {
         {this.props.listcontent.map((content, index) => {
           return (
             <li key={index}>
-              <Router>
+
                 <Link
                   className={this.isActive(content.id, index)}
                   onClick={e => this.handleClick(e, content.id)}
@@ -42,7 +42,7 @@ class Menuitems extends Component {
                   />
                   <em>{content.name}</em>
                 </Link>
-              </Router>
+
             </li>
           );
         })}

@@ -14,7 +14,7 @@ describe('<menuitem />', () => {
     Menuitems.prototype.handleClick = mockfn;
     const wrapper = shallow(
       <Menuitems
-        listcontent={[{ id: 2, link: '/AboutUs', name: 'ABOUT US' }]}
+        listcontent={[{ id: 2, link: '/About', name: 'ABOUT US' }]}
         onclick={mockfn}
       />
     );
@@ -30,7 +30,7 @@ describe('<menuitem />', () => {
         },
         {
           id: 2,
-          link: '/AboutUs',
+          link: '/About',
           name: 'ABOUT US'
         },
         {
@@ -83,7 +83,7 @@ describe('<menuitem />', () => {
         },
         {
           id: 2,
-          link: '/AboutUs',
+          link: '/About',
           name: 'ABOUT US'
         },
         {

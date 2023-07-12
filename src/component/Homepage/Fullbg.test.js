@@ -10,19 +10,22 @@ describe('it should render homepage thumbnail', () => {
         {
           num: 1,
           active: true,
-          title: 'New Arrival',
-          first: 'Beautiful',
-          second: 'Earth'
+          color: '#000',
+          title: 'PASSION',
+          first: 'IT\'s All about you',
+          second: 'Keep going'
         },
         {
           num: 2,
-          title: 'Latest One',
-          first: 'Tech',
-          second: 'Meeting'
+          title: 'Latest ',
+          color: '#000',
+          first: 'Latest Design',
+          second: 'Meaning'
         },
         {
           num: 3,
           title: 'Your Update',
+          color: '#fff',
           first: 'Smart',
           second: 'Devices'
         }

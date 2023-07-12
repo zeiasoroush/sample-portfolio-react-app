@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`it should render gallery page content should render content 1`] = `ShallowWrapper {}`;

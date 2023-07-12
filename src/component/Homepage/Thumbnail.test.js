@@ -11,7 +11,7 @@ describe('it should render homepage thumbnail', () => {
         {
           num: '1',
           src: '01',
-          alt: 'Earth'
+          alt: 'Mine'
         },
         {
           num: '2',

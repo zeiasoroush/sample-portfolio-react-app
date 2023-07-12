@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Contactus.css';
-class ContactUspage extends Component {
+class ContactUsPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -92,4 +92,4 @@ class ContactUspage extends Component {
   }
 }
 
-export default ContactUspage;
+export default ContactUsPage;

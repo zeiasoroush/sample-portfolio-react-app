@@ -81,6 +81,7 @@ nav a::before {
   display: inline-block;
   text-align: center;
   background-color: #faf5b2;
+  opacity: .5;
   height: 15%;
   width: 15%;
 }

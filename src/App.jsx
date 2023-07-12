@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './component/Header/Header';
-import Homepage from './component/Homepage/Homepage';
-import Aboutuspage from './component/About/Aboutus';
-import Gallery from './component/OurGallery/Gallerypage';
-import ContactUspage from './component/ContactUs/ContactUspage';
+import HomePage from './component/Homepage/HomePage';
+import AboutPage from './component/About/About';
+import Gallery from './component/Projects/projectsPage';
+import ContactUsPage from './component/ContactUs/ContactUspage';
 import SequencePreloader from './SequencePreloader';
 import './App.css';
 
@@ -34,12 +34,13 @@ class App extends Component {
           <div className="App">
             <Header callbackhandle={this.handlecallbackfromHeader} />
             <div className="slides">
-              <Switch>
-                <Route exact path="/" component={Homepage} />
-                <Route path="/AboutUs" component={Aboutuspage} />
-                <Route path="/Gallery" component={Gallery} />
-                <Route path="/ContactUs" component={ContactUspage} />
-              </Switch>
+              <Routes>
+                <Route exact path="/" element={<HomePage />} />
+                <Route path="/About" element={<AboutPage />} />
+                <Route path="/Gallery" element={<Gallery />} />
+                <Route path="/ContactUs" element={<ContactUsPage />} />
+
+              </Routes>
             </div>
           </div>
         </Router>

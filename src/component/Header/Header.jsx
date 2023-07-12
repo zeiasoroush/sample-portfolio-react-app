@@ -14,8 +14,8 @@ class Header extends Component {
         },
         {
           id: 2,
-          link: '/AboutUs',
-          name: 'ABOUT US'
+          link: '/About',
+          name: 'ABOUT'
         },
         {
           id: 3,
@@ -41,8 +41,8 @@ class Header extends Component {
     return (
       <div className="Header">
         <div className="logo">
-          <h1>Earth</h1>
-          <h2>E</h2>
+          <h1>Sample Portfolio</h1>
+          <h2>Portfolio</h2>
         </div>
         <nav>
           <Menuitems

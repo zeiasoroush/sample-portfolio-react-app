@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`it show gallery page content should match snapshot 1`] = `ShallowWrapper {}`;
